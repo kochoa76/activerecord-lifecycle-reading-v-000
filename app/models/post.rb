@@ -5,7 +5,7 @@ class Post < ActiveRecord::Base
 
   private
 
-  before_validation make_title_case 
+  before_validation :make_title_case 
 
   def is_title_case
     if title.split.any?{|w|w[0].upcase != w[0]}
